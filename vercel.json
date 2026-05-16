@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "name": "stock-api",
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/quote",
+      "dest": "/api/quote.js"
+    },
+    {
+      "src": "/api/search",
+      "dest": "/api/search.js"
+    },
+    {
+      "src": "/api/news",
+      "dest": "/api/news.js"
+    },
+    {
+      "src": "/api/push",
+      "dest": "/api/push.js"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.js"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "https://gebggrgwzqwsctujncxp.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_ra66ZYmlhZ_KWkTkPnHBSA_8IqGEWjr"
+  }
+}
